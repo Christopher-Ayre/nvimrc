@@ -10,6 +10,7 @@ set ignorecase
 set smartcase
 set browsedir=current
 set clipboard=unnamedplus
+set mouse= " Disable the mouse, as God inteneded
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -19,6 +20,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+
+Plug 'airblade/vim-rooter'
 call plug#end()
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -49,3 +52,6 @@ let g:coc_global_extensions = [
   \  'coc-prettier',
   \  'coc-omnisharp'
   \ ]
+
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln']
+let g:rooter_change_directory_for_non_project_files = 'current'
